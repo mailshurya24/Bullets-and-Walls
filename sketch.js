@@ -2,9 +2,6 @@
 var bullet,wall;
 var speed,weight,thickness;
 
-//creating the aliases for the bullet and wall sprites
-var bulletRightEdge,wallLeftEdge
-
 function setup() 
 {
   //creating the canvas
@@ -19,16 +16,16 @@ function setup()
   speed = random(223,321);
   weight = random(30,52);
   thickness = random(22,83);
+
+  //randomising bullet velocityX using speed variable
+  bullet.velocityX = speed;
 }
 
 function draw() 
 {
   //adding background colr
   background(255,255,255);
-  
-  //randomising bullet velocityX using speed variable
-  bullet.velocityX = speed;
-
+ 
   //detecting collision
   if(hasCollided(bullet,wall))
   {

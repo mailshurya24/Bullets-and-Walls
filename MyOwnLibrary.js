@@ -1,15 +1,12 @@
 //creating a function for my own library
-function hasCollided(bullet,wall)
+function hasCollided(lbullet,lwall)
 {
-  bulletRightEdge = bullet.x + bullet.width;
-  wallLeftEdge = wall.x;
+  bulletRightEdge = lbullet.x + lbullet.width;
+  wallLeftEdge = lwall.x;
 
   if(bulletRightEdge>=wallLeftEdge)
   {
     return true;
   }
-  else
-  {
     return false;
-  }
 }
