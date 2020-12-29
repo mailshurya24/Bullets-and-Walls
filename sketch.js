@@ -19,7 +19,7 @@ function setup()
   bullet.velocityX = speed;
   bullet.shapeColor = color(255);
 
-  wall = createSprite(1200,200,thickness,height/2);
+  wall = createSprite(1200,200,thickness-20,height/2);
   wall.shapeColor = color(230,230,230);
 
 }
@@ -39,13 +39,17 @@ function draw()
     var damage = 0.5 * weight * speed * speed/(thickness * thickness * thickness);
 
     //determining color based on damage calculations
-    if(damage>10)
-    {
-      wall.shapeColor = color(255,0,0);
-    }
     if(damage<10)
     {
-      wall.shapeColor = color(0,255,0);
+      bullet.shapeColor = "green";
+    }
+    if(damage>10&&damage<=25)
+    {
+      bullet.shapeColor = "yellow";
+    }
+    if(damage>25)
+    {
+      bullet.shapeColor = "red";
     }
   }
 
